@@ -55,14 +55,14 @@ Asumiremos que el número de columnas de la primera matriz es igual al número d
         
         
         for (let fila = 0; fila < matrizUno.length; fila++) {
-    
+            let filaResult = [];
             for (let columna = 0; columna < matrizUno[fila].length; columna++) {
-             
-                result.push(matrizUno[fila][columna] + matrizDos[fila][columna])
-               
+                let suma = matrizUno[fila][columna] + matrizDos[fila][columna];
+                filaResult.push(suma);
+              }
+          
+              result.push(filaResult);
             }
-            
-        }
         return result
     }else return "Error"
 
@@ -70,3 +70,6 @@ Asumiremos que el número de columnas de la primera matriz es igual al número d
 
  console.log(sumMatrices(matriz, matrizTwo
     ));
+
+
+  

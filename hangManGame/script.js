@@ -1,4 +1,5 @@
 const buttons = document.querySelectorAll(".letter-button")
+const word = document.getElementById("word")
 const words = [
     {
         word: "Hola",
@@ -286,5 +287,28 @@ window.onload = (e)=>{
     }
 
     let wordToSearch = words[random];
-    
-}
+  
+    let lengthOfWordSelected = wordToSearch.getlength()
+
+    for (let i = 0; i < lengthOfWordSelected; i++) {
+      const p = document.createElement("span");
+    p.textContent = "_ "; 
+    word.appendChild(p)
+    }
+    let array = wordToSearch.word.split("");
+    console.log(wordToSearch.word);
+    console.log(array);
+
+    localStorage.setItem("word", JSON.stringify(wordToSearch));
+    localStorage.setItem("wordToSearch", JSON.stringify(wordToSearch.word));
+    localStorage.setItem("wordToSearchArray", JSON.stringify(array));
+
+
+  }
+
+  buttons.forEach(boton => {
+    boton.addEventListener("click" , (e)=>{
+      let letra = boton.textContent;
+      console.log(letra);
+    })
+  });

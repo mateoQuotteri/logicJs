@@ -18,14 +18,64 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: start;
     align-items: center;
+    padding: .3em;
+    position: relative;
   }
   
-  #hangman img {
-    max-width: 100%;
-    max-height: 100%;
+  #hangman .head{
+   width: 20%;
+   height: 20%;
+   padding: .2em;
+   display: flex;
+   justify-content: center;
+   align-self: center;
   }
+    #hangman .head .head-border{ 
+      width: 100%;
+   height: 100%;
+      border: 1px solid black;
+      border-radius: 1.5em;
+     }
+
+      #hangman .body{
+   width: 20%;
+   height: 20%;
+  }
+   #hangman .body p{
+    margin: .2px;
+    text-align: center;
+  }
+
+  #hangman .body span{
+    margin: .2px;
+    text-align: center;
+  }
+  #hangman .legs{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+   }
+   .legs .left-leg{
+    width: 45%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-image: url(./piernaIzquierda.jpg);
+   }
+   .legs .right-leg{
+    width: 45%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-image: url(./piernaDerecha.jpg);
+   }
+  
   
   #word {
     margin: 20px auto;
@@ -65,4 +115,21 @@ body {
   .loss {
     color: #FF6B6B;
   }
-  
+  .x{
+    height: 100%;
+    width: 100%;
+   z-index: 1;
+   background-image: url(./x.png);
+   background-position: center;
+   background-size: contain;
+   background-repeat: no-repeat;
+   position: absolute;
+  }
+
+  .none{
+    opacity: 0 ;
+  }
+  .none-display{
+    display: none ;
+  }
+

@@ -287,28 +287,40 @@ window.onload = (e)=>{
     }
 
     let wordToSearch = words[random];
-  
+    console.log(wordToSearch);
     let lengthOfWordSelected = wordToSearch.getlength()
-
     for (let i = 0; i < lengthOfWordSelected; i++) {
       const p = document.createElement("span");
     p.textContent = "_ "; 
     word.appendChild(p)
     }
     let array = wordToSearch.word.split("");
-    console.log(wordToSearch.word);
-    console.log(array);
+    if (localStorage.getItem("word")) {
+      localStorage.removeItem("word");
+      localStorage.removeItem("word");
+      localStorage.removeItem("word");
 
-    localStorage.setItem("word", JSON.stringify(wordToSearch));
-    localStorage.setItem("wordToSearch", JSON.stringify(wordToSearch.word));
-    localStorage.setItem("wordToSearchArray", JSON.stringify(array));
+      localStorage.setItem("word", wordToSearch);
+      localStorage.setItem("wordToSearch", wordToSearch.word);
+      localStorage.setItem("wordToSearchArray", JSON.stringify(array));
+    }
 
 
   }
 
+  
   buttons.forEach(boton => {
-    boton.addEventListener("click" , (e)=>{
+    boton.addEventListener("click", (e) => {
+      let wordToCompare = localStorage.getItem("wordToSearchArray");
       let letra = boton.textContent;
-      console.log(letra);
-    })
+      console.log(wordToCompare);
+      for (let i = 0; i < wordToCompare.length; i++) {
+       if (wordToCompare[i] == letra) {
+        console.log(true);
+       }
+      }
+      
+    });
   });
+  
+  

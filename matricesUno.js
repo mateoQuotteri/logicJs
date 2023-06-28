@@ -6,17 +6,17 @@ let matriz = [
     [7, 89, 75, 46, 41]
 ]
 
+/*recorro la columna con indice 1 (la segunda) */
+for (let index = 0; index < matriz.length; index++) {
+    console.log(matriz[index][1]);
+    
+}
 /*recorro la fila con inidce  1 (la segunda) */
 for (let index = 0; index < matriz[1].length; index++) {
     console.log(matriz[1][index]);
     
 }
 
-/*recorro la columna con indice 1 (la segunda) */
-for (let index = 0; index < matriz.length; index++) {
-    console.log(matriz[index][1]);
-    
-}
 
 
 /* RECORRO TODO*/

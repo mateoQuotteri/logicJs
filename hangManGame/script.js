@@ -1,280 +1,163 @@
 const buttons = document.querySelectorAll(".letter-button")
 const word = document.getElementById("word")
 const words = [
-    {
-        word: "Hola",
+  {
+    word: "HOLA",
     getlength() {
       return this.word.length;
     },
     dificultad: 4,
   },
   {
-    word: "Programación",
+    word: "PROGRAMACIÓN",
     getlength() {
       return this.word.length;
     },
     dificultad: 7,
   },
   {
-    word: "Elefante",
+    word: "ELEFANTE",
     getlength() {
       return this.word.length;
     },
     dificultad: 5,
   },
   {
-    word: "Supercalifragilisticoespialidoso",
+    word: "SUPERCALIFRAGILISTICOESPIALIDOSO",
     getlength() {
       return this.word.length;
     },
     dificultad: 10,
   },
   {
-    word: "Murciélago",
+    word: "MURCIÉLAGO",
     getlength() {
       return this.word.length;
     },
     dificultad: 6,
   },
   {
-    word: "Mariposa",
+    word: "MARIPOSA",
     getlength() {
       return this.word.length;
     },
     dificultad: 4,
   },
   {
-    word: "Python",
+    word: "PYTHON",
     getlength() {
       return this.word.length;
     },
     dificultad: 3,
   },
   {
-    word: "Hipopótamo",
+    word: "HIPOPÓTAMO",
     get length() {
       return this.word.length;
     },
     dificultad: 7,
   },
   {
-    word: "Playa",
+    word: "PLAYA",
     get length() {
       return this.word.length;
     },
     dificultad: 2,
   },
   {
-    word: "Extraordinario",
+    word: "EXTRAORDINARIO",
     get length() {
       return this.word.length;
     },
     dificultad: 8,
   },
   {
-    word: "Elefante",
+    word: "ELEFANTE",
     getlength() {
       return this.word.length;
     },
     dificultad: 5,
   },
   {
-    word: "Sorpresa",
+    word: "SORPRESA",
     get length() {
       return this.word.length;
     },
     dificultad: 6,
   },
   {
-    word: "Escritorio",
+    word: "ESCRITORIO",
     getlength() {
       return this.word.length;
     },
     dificultad: 7,
   },
   {
-    word: "Sol",
+    word: "SOL",
     getlength() {
       return this.word.length;
     },
     dificultad: 1,
   },
   {
-    word: "Desarrollo",
+    word: "DESARROLLO",
     getlength() {
       return this.word.length;
     },
     dificultad: 6,
   },
   {
-    word: "Guitarra",
+    word: "GUITARRA",
     getlength() {
       return this.word.length;
     },
     dificultad: 6,
   },
   {
-    word: "Playa",
+    word: "PLAYA",
     getlength() {
       return this.word.length;
     },
     dificultad: 4,
   },
   {
-    word: "Computadora",
+    word: "COMPUTADORA",
     getlength() {
       return this.word.length;
     },
     dificultad: 7,
   },
   {
-    word: "Elefante",
+    word: "ELEFANTE",
     getlength() {
       return this.word.length;
     },
     dificultad: 5,
   },
   {
-    word: "Fresa",
+    word: "FRESA",
     getlength() {
       return this.word.length;
     },
     dificultad: 3,
   },
   {
-    word: "Dinosaurio",
+    word: "DINOSAURIO",
     getlength() {
       return this.word.length;
     },
     dificultad: 8,
   },
   {
-    word: "Cerveza",
+    word: "CERVEZA",
     getlength() {
       return this.word.length;
     },
-    dificultad: 5,
-  },
-  {
-    word: "Felicidad",
-    getlength() {
-      return this.word.length;
-    },
-    dificultad: 5,
-  },
-  {
-    word: "Cafetera",
-    getlength() {
-      return this.word.length;
-    },
-    dificultad: 4,
-  },
-  {
-    word: "Ingeniería",
-    getlength() {
-      return this.word.length;
-    },
-    dificultad: 7,
-  },
-  {
-    word: "Playstation",
-    getlength() {
-      return this.word.length;
-    },
-    dificultad: 6,
-  },
-  {
-    word: "Computadora",
-    getlength() {
-      return this.word.length;
-    },
-    dificultad: 7,
-  },
-  {
-    word: "Chocolate",
-    getlength() {
-      return this.word.length;
-    },
-    dificultad: 5,
-  },
-  {
-    word: "Astronomía",
-    getlength() {
-      return this.word.length;
-    },
-    dificultad: 8,
-  },
-  {
-    word: "Camiseta",
-    getlength() {
-      return this.word.length;
-    },
-    dificultad: 5,
-  },
-  {
-    word: "Refrigerador",
-    getlength() {
-      return this.word.length;
-    },
-    dificultad: 7,
-  },
-  {
-    word: "Mandarina",
-    getlength() {
-      return this.word.length;
-    },
-    dificultad: 4,
-  },
-  {
-    word: "Teléfono",
-    getlength() {
-      return this.word.length;
-    },
-    dificultad: 5,
-  },
-  {
-    word: "Escuela",
-    getlength() {
-      return this.word.length;
-    },
-    dificultad: 3,
-  },
-  {
-    word: "Ventana",
-    gelength() {
-      return this.word.length;
-    },
-    dificultad: 4,
-  },
-  {
-    word: "Avión",
-    getlength() {
-      return this.word.length;
-    },
-    dificultad: 2,
-  },
-  {
-    word: "Libro",
-    getlength() {
-      return this.word.length;
-    },
-    dificultad: 2,
-  },
-  {
-    word: "Elefante",
-    getlength() {
-      return this.word.length;
-    },
-    dificultad: 5,
-  },
-  {
-    word: "Cocodrilo",
-    getlength() {
-      return this.word.length;
-    },
-    dificultad: 6,
+    dificultad : 6
   },
 ];
+
+let wordToCompare;
 window.onload = (e)=>{
     let random = Math.round(Math.random() * 10)
     let random2 = Math.random() 
@@ -287,12 +170,14 @@ window.onload = (e)=>{
     }
 
     let wordToSearch = words[random];
-    console.log(wordToSearch);
+    wordToCompare = wordToSearch.word
     let lengthOfWordSelected = wordToSearch.getlength()
     for (let i = 0; i < lengthOfWordSelected; i++) {
-      const p = document.createElement("span");
-    p.textContent = "_ "; 
-    word.appendChild(p)
+      const span = document.createElement("span");
+      span.classList.add("span")
+      span.id = i;
+    span.textContent = "_ "; 
+    word.appendChild(span)
     }
     let array = wordToSearch.word.split("");
     if (localStorage.getItem("word")) {
@@ -305,21 +190,37 @@ window.onload = (e)=>{
       localStorage.setItem("wordToSearchArray", JSON.stringify(array));
     }
 
+    console.log(wordToSearch.word);
+
 
   }
 
   
   buttons.forEach(boton => {
     boton.addEventListener("click", (e) => {
-      let wordToCompare = localStorage.getItem("wordToSearchArray");
+     console.log(wordToCompare);
       let letra = boton.textContent;
-      console.log(wordToCompare);
-      for (let i = 0; i < wordToCompare.length; i++) {
-       if (wordToCompare[i] == letra) {
-        console.log(true);
-       }
+      console.log(letra);
+
+     if (wordToCompare.includes(letra)) {
+      let array = []
+     for (let i = 0; i < wordToCompare.length; i++) {
+      if (wordToCompare[i] == letra) {
+        array.push(i)
+
       }
-      
+      let arrayOfSpans = []
+      array.forEach( indice => {
+        arrayOfSpans.push(document.getElementById(indice))
+      });
+
+      arrayOfSpans.forEach(element => {
+        element.textContent = letra
+      });
+    }
+   
+  }
+  console.log(spansToRemove);
     });
   });
   

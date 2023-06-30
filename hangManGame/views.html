@@ -5,23 +5,21 @@
 </head>
 <body>
   <h1>Juego del Ahorcado</h1>
-  
+  <h3 id="dificultad">Dificultad : </h3>
   <div id="hangman" class="hangman">
     <div class="x none-display" >
     </div> 
-    <div class="head none">
-      <div class="head-border"></div>
+    <div class="headHangMan none">
+      <div class="head-messi"></div>
     </div> 
     <div class="body none">
-      <div class="body-border">
-        <p>|</p>
-        <span>--------</span>
-        <p>|</p>
-        <p>|</p>
-      </div>
+      <div class="rightArm none"></div>
+      <div class="torso none"></div>
+      <div class="leftArm none"></div>
+
       <section class="legs none">
-    <div class="left-leg"></div>
-    <div class="right-leg"></div>
+    <div class="left-leg none"></div>
+    <div class="right-leg none"></div>
 
   
       </section> 
@@ -30,6 +28,10 @@
   
   <div id="word">
     <!-- Aquí se mostrará la palabra oculta con espacios en blanco y letras adivinadas -->
+  <h4 id="letraNoAparece" class="none">
+    
+  </h4>
+  
   </div>
   
   <div id="letters">

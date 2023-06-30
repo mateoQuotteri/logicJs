@@ -1,5 +1,17 @@
 const buttons = document.querySelectorAll(".letter-button")
 const word = document.getElementById("word")
+const dificultad = document.getElementById("dificultad")
+const letraNoApareceAviso = document.getElementById("letraNoAparece")
+const x = document.querySelector("x")
+const head = document.querySelector(".headHangMan")
+const body = document.querySelector(".body")
+const legs = document.querySelector(".legs")
+const rightLeg = document.querySelector(".right-leg")
+const leftLeg = document.querySelector(".left-leg")
+const leftArm = document.querySelector(".leftArm")
+const rightArm = document.querySelector(".rightArm")
+const torso = document.querySelector(".torso")
+
 const words = [
   {
     word: "HOLA",
@@ -9,7 +21,7 @@ const words = [
     dificultad: 4,
   },
   {
-    word: "PROGRAMACIÓN",
+    word: "PROGRAMACION",
     getlength() {
       return this.word.length;
     },
@@ -30,7 +42,7 @@ const words = [
     dificultad: 10,
   },
   {
-    word: "MURCIÉLAGO",
+    word: "MURCIELAGO",
     getlength() {
       return this.word.length;
     },
@@ -51,7 +63,7 @@ const words = [
     dificultad: 3,
   },
   {
-    word: "HIPOPÓTAMO",
+    word: "HIPOPOTAMO",
     get length() {
       return this.word.length;
     },
@@ -171,6 +183,7 @@ window.onload = (e)=>{
 
     let wordToSearch = words[random];
     wordToCompare = wordToSearch.word
+    dificultad.textContent = "Dificultad:" + wordToSearch.dificultad + "/10"
     let lengthOfWordSelected = wordToSearch.getlength()
     for (let i = 0; i < lengthOfWordSelected; i++) {
       const span = document.createElement("span");
@@ -191,17 +204,18 @@ window.onload = (e)=>{
     }
 
     console.log(wordToSearch.word);
-
-
+    
+    
   }
-
   
+  
+  let contador = 0;
   buttons.forEach(boton => {
     boton.addEventListener("click", (e) => {
-     console.log(wordToCompare);
+      console.log(wordToCompare);
       let letra = boton.textContent;
-      console.log(letra);
-
+      
+  
      if (wordToCompare.includes(letra)) {
       let array = []
      for (let i = 0; i < wordToCompare.length; i++) {
@@ -219,8 +233,29 @@ window.onload = (e)=>{
       });
     }
    
+  }else {
+    letraNoApareceAviso.classList.remove("none")
+    letraNoApareceAviso.textContent = "La letra " + letra + " no es contenida por la palabra oculta."
+    if (contador == 0) {
+      console.log(head);
+      head.classList.remove("none")
+    }else if(contador == 1) {
+      body.classList.remove("none")
+      torso.classList.remove("none")
+    }
+    else if (contador == 2) {
+      legs.classList.remove("none")
+      leftLeg.classList.remove("none")
+    }  else if (contador == 3) {
+      rightLeg.classList.remove("none")
+    }else if (contador == 4) {
+      rightArm.classList.remove("none")
+    }else if (contador == 5) {
+      leftArm.classList.remove("none")
+    }
+   
+    contador += 1
   }
-  console.log(spansToRemove);
     });
   });
   

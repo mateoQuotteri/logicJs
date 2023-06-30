@@ -19,40 +19,59 @@ body {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
-    justify-content: start;
+ 
     align-items: center;
     padding: .3em;
     position: relative;
   }
   
-  #hangman .head{
+  #hangman .headHangMan{
    width: 20%;
-   height: 20%;
+   height: 30%;
    padding: .2em;
    display: flex;
    justify-content: center;
    align-self: center;
   }
-    #hangman .head .head-border{ 
+    #hangman .head-messi{ 
       width: 100%;
-   height: 100%;
-      border: 1px solid black;
-      border-radius: 1.5em;
-     }
-
-      #hangman .body{
-   width: 20%;
-   height: 20%;
-  }
-   #hangman .body p{
-    margin: .2px;
-    text-align: center;
+      height: 100%;
+      background-image: url(./cabezaMessi.jpeg);
+      background-position: center;
+      background-size: cover;
   }
 
-  #hangman .body span{
-    margin: .2px;
-    text-align: center;
+  #hangman .body{
+   width: 40%;
+   height: 35%;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
   }
+  .body .leftArm{ 
+    width: 25%;
+    height: 100%;
+    background-image: url(./brazoDerecho.png);
+    background-position: center;
+    background-size: cover;
+  }
+  .body .torso{ 
+    width: 50%;
+    height: 100%;
+    background-image: url(./torso.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+
+  .body .rightArm{ 
+    width: 25%;
+    height: 100%;
+    background-image: url(./brazoizquierdo.png);
+    background-position: center;
+    background-size: cover;
+  }
+  
   #hangman .legs{
     width: 100%;
     height: 80%;

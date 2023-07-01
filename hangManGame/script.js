@@ -2,7 +2,7 @@ const buttons = document.querySelectorAll(".letter-button")
 const word = document.getElementById("word")
 const dificultad = document.getElementById("dificultad")
 const letraNoApareceAviso = document.getElementById("letraNoAparece")
-const x = document.querySelector("x")
+const x = document.querySelector(".x")
 const head = document.querySelector(".headHangMan")
 const body = document.querySelector(".body")
 const legs = document.querySelector(".legs")
@@ -11,6 +11,9 @@ const leftLeg = document.querySelector(".left-leg")
 const leftArm = document.querySelector(".leftArm")
 const rightArm = document.querySelector(".rightArm")
 const torso = document.querySelector(".torso")
+const tablero = document.getElementById("letters")
+const advice = document.getElementById("advice")
+const palabraOculta = document.getElementById("palabraOculta")
 
 const words = [
   {
@@ -252,6 +255,11 @@ window.onload = (e)=>{
       rightArm.classList.remove("none")
     }else if (contador == 5) {
       leftArm.classList.remove("none")
+    }else if(contador == 6){
+      x.classList.remove("none-display")
+      tablero.classList.add("none-display")
+      advice.classList.remove("none-display")
+      palabraOculta.textContent = wordToCompare;
     }
    
     contador += 1

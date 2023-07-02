@@ -151,4 +151,20 @@ body {
   .none-display{
     display: none ;
   }
+  .card {
+    background-color: #f44336;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 100px;
+    font-family: Arial, sans-serif;
+  }
 
+  .word {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+  }

@@ -14,6 +14,8 @@ const torso = document.querySelector(".torso")
 const tablero = document.getElementById("letters")
 const advice = document.getElementById("advice")
 const palabraOculta = document.getElementById("palabraOculta")
+const adviceWin = document.getElementById("advice-win")
+const palabraOcultaWin = document.getElementById("palabraOcultaWin")
 
 const words = [
   {
@@ -213,19 +215,19 @@ window.onload = (e)=>{
   
   
   let contador = 0;
+
   buttons.forEach(boton => {
     boton.addEventListener("click", (e) => {
       console.log(wordToCompare);
       let letra = boton.textContent;
       
-  
-     if (wordToCompare.includes(letra)) {
+      if (wordToCompare.includes(letra)) {
       let array = []
      for (let i = 0; i < wordToCompare.length; i++) {
       if (wordToCompare[i] == letra) {
         array.push(i)
-
       }
+   
       let arrayOfSpans = []
       array.forEach( indice => {
         arrayOfSpans.push(document.getElementById(indice))
@@ -234,6 +236,9 @@ window.onload = (e)=>{
       arrayOfSpans.forEach(element => {
         element.textContent = letra
       });
+     
+      
+     
     }
    
   }else {

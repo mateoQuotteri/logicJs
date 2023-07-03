@@ -236,6 +236,26 @@ window.onload = (e)=>{
       arrayOfSpans.forEach(element => {
         element.textContent = letra
       });
+
+      let allSpans = document.querySelectorAll(".span")
+      let isALetterArray = [];
+      let todasLasLetras =  ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
+       'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+      allSpans.forEach(element => {
+        if(todasLasLetras.includes(element.textContent)){
+        isALetterArray.push(true)
+      }else{
+        isALetterArray.push(false)
+      }
+      });
+
+      if (isALetterArray.includes(false)) {
+        console.log(isALetterArray);
+      }else{
+       adviceWin.classList.remove("none-display")
+       tablero.classList.add("none-display")
+       palabraOcultaWin.textContent = wordToCompare;
+      }
      
       
      

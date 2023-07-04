@@ -218,6 +218,9 @@ window.onload = (e)=>{
 
   buttons.forEach(boton => {
     boton.addEventListener("click", (e) => {
+      boton.disabled = true;
+      boton.classList.add("button-disabled")
+      boton.classList.remove("letter-button")
       console.log(wordToCompare);
       let letra = boton.textContent;
       

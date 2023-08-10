@@ -18,13 +18,21 @@ function estaRepetido(array, item) {
     let mensaje = `Este item: ${item} esta solo una vez en el array dado, su posicion es:  ${indiceDelItem}.`;
     return mensaje;
 }else {
-    let mensaje = `Este item: ${item} esta dos veces en el array dado, en las posiciones:  ${indiceDelItem}
-    y ${ultimoIndiceDelItem}.`;
+  let contador = []
+    for (let i = 0; i < array.length; i++) {
+      if (array[i] == item) {
+        contador.push(i);
+      }
+    }
+
+    let vecesRepetido = contador.length;
+    let mensaje = `Este item: ${item} esta ${vecesRepetido} veces repetido el array dado, 
+    su posicion es:${contador}.`;
     return mensaje;
 }
 }
 
-let miArray = ["a", "e", "i", "o", "u", "a", "e", "i", "o", "u"];
-let miItem = "z"
+let miArray = ["a", "e", "i", "o", "u", "a", "e", "i", "o", "u", "a", "e", "i", "o", "u"];
+let miItem = "a"
 
 console.log(estaRepetido(miArray , miItem));

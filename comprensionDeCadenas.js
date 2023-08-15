@@ -15,7 +15,9 @@ ESCRIBE UNA FUNCION QUE TOME UNA CADENA Y LA COMPRIMA EN UN FORMATOCOMO "a2b1c5"
             contador += 1;
         }
     }
-array.push(`${indice + contador}`)    
+    if (!array.includes(indice + contador)) {
+        array.push(`${indice + contador}`)   
+    } 
     
    }
    return array
@@ -23,4 +25,4 @@ array.push(`${indice + contador}`)
  }
 
 
- console.log(comprensionDeCadenas("abcabca"));
+ console.log(comprensionDeCadenas("abcdea"));

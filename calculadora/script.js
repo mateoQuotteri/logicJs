@@ -1,4 +1,4 @@
-const todosLosBotones = document.querySelectorAll(".button")
+/*const todosLosBotones = document.querySelectorAll(".button")
 const numeros = ["1", "2", "3","4","5","6","7","8","9"];
 const operadores =["+", "-", "/" , "*"];
 const input = document.getElementById("display")
@@ -8,7 +8,10 @@ window.onload = (e)=> {
     
     let initialArray
     let primerNumero ;
-input.value = ""
+input.value = "";
+localStorage.removeItem("primerNumero")
+localStorage.removeItem("primerNumero")
+
     todosLosBotones.forEach(button => {
         button.addEventListener("click", (e)=> {
             const value = button.textContent;
@@ -28,9 +31,6 @@ input.value = ""
                         let resultado = `${localStorage.getItem("primerNumero")}  ${signo}  ${numeroSeleccionado} `
                         input.value = eval(resultado);
                         localStorage.removeItem("primerNumero")
-
-
-
                     }
                 }
             }
@@ -38,8 +38,47 @@ input.value = ""
             
         )
     });
-}
+}*/
+const todosLosBotones = document.querySelectorAll(".button")
+const numeros = ["1", "2", "3","4","5","6","7","8","9"];
+const operadores =["+", "-", "/" , "*"];
+const input = document.getElementById("display")
 
+let collectingArray = [];
+window.onload = (e)=> {
+    
+    let initialArray  
+    let primerNumero ;
+input.value = "";
+localStorage.removeItem("primerNumero")
+localStorage.removeItem("primerNumero")
+
+    todosLosBotones.forEach(button => {
+        button.addEventListener("click", (e)=> {
+            const value = button.textContent;
+            if (numeros.includes(value) ) {
+                input.value += value
+
+                if (localStorage.getItem("primerNumero")) {
+                    // que hacemos si ya hay un primer numero alacenado
+                }else{
+                    // que hacemos si no  hay ese primer numero
+                }
+                
+            }else if (operadores.includes(value)) {
+                if (localStorage.getItem("primerNumero")) {
+                    // que hacemos si ya hay un primer numero alacenado
+                }else{
+                    // que hacemos si no  hay ese primer numero
+                }
+            }else{
+                
+            }
+            }
+            
+        )
+    });
+}
 /*const todosLosBotones = document.querySelectorAll(".button")
 const numeros = ["1", "2", "3","4","5","6","7","8","9"];
 const operadores =["+", "-", "/" , "*"];

@@ -1,138 +1,116 @@
-/*const todosLosBotones = document.querySelectorAll(".button")
-const numeros = ["1", "2", "3","4","5","6","7","8","9"];
-const operadores =["+", "-", "/" , "*"];
-const input = document.getElementById("display")
+//Declaramos variables
+var operandoa;
+var operandob;
+var operacion;
 
-let collectingArray = [];
-window.onload = (e)=> {
-    
-    let initialArray
-    let primerNumero ;
-input.value = "";
-localStorage.removeItem("primerNumero")
-localStorage.removeItem("primerNumero")
+function init(){
+  //variables
+  var resultado = document.getElementById('resultado');
+  var reset = document.getElementById('reset');
+  var suma = document.getElementById('suma');
+  var resta = document.getElementById('resta');
+  var multiplicacion = document.getElementById('multiplicacion');
+  var division = document.getElementById('division');
+  var igual = document.getElementById('igual');
+  var uno = document.getElementById('uno');
+  var dos = document.getElementById('dos');
+  var tres = document.getElementById('tres');
+  var cuatro = document.getElementById('cuatro');
+  var cinco = document.getElementById('cinco');
+  var seis = document.getElementById('seis');
+  var siete = document.getElementById('siete');
+  var ocho = document.getElementById('ocho');
+  var nueve = document.getElementById('nueve');
+  var cero = document.getElementById('cero');
 
-    todosLosBotones.forEach(button => {
-        button.addEventListener("click", (e)=> {
-            const value = button.textContent;
-            if (numeros.includes(value) ) {
-                input.value += value
-            }else if (operadores.includes(value)) {
-                let numeroSeleccionado = input.value;
-                input.value = ""
-                if (numeroSeleccionado) {
-                    if (!initialArray) {
-                        primerNumero = numeroSeleccionado;
-                        localStorage.setItem("primerNumero", primerNumero)
-                        initialArray=value
-                    }else{
-                        let segundoNumero = numeroSeleccionado;
-                        let signo = initialArray
-                        let resultado = `${localStorage.getItem("primerNumero")}  ${signo}  ${numeroSeleccionado} `
-                        input.value = eval(resultado);
-                        localStorage.removeItem("primerNumero")
-                    }
-                }
-            }
-            }
-            
-        )
-    });
-}*/
-const todosLosBotones = document.querySelectorAll(".button")
-const numeros = ["1", "2", "3","4","5","6","7","8","9"];
-const operadores =["+", "-", "/" , "*"];
-const input = document.getElementById("display")
-
-let collectingArray = [];
-window.onload = (e)=> {
-    
-    let initialArray  
-    let primerNumero ;
-input.value = "";
-localStorage.removeItem("primerNumero")
-localStorage.removeItem("primerNumero")
-
-    todosLosBotones.forEach(button => {
-        button.addEventListener("click", (e)=> {
-            const value = button.textContent;
-            if (numeros.includes(value) ) {
-                input.value += value
-
-                if (localStorage.getItem("primerNumero")) {
-                    // que hacemos si ya hay un primer numero alacenado
-                }else{
-                    // que hacemos si no  hay ese primer numero
-                }
-                
-            }else if (operadores.includes(value)) {
-                if (localStorage.getItem("primerNumero")) {
-                    // que hacemos si ya hay un primer numero alacenado
-                }else{
-                    // que hacemos si no  hay ese primer numero
-                }
-            }else{
-                
-            }
-            }
-            
-        )
-    });
+//Eventos de click
+  uno.onclick = function(e){
+      resultado.textContent = resultado.textContent  + "1";
+  }
+  dos.onclick = function(e){
+      resultado.textContent = resultado.textContent  + "2";
+  }
+  tres.onclick = function(e){
+      resultado.textContent = resultado.textContent  + "3";
+  }
+  cuatro.onclick = function(e){
+      resultado.textContent = resultado.textContent  + "4";
+  }
+  cinco.onclick = function(e){
+      resultado.textContent = resultado.textContent  + "5";
+  }
+  seis.onclick = function(e){
+      resultado.textContent = resultado.textContent  + "6";
+  }
+  siete.onclick = function(e){
+      resultado.textContent = resultado.textContent  + "7";
+  }
+  ocho.onclick = function(e){
+      resultado.textContent = resultado.textContent  + "8";
+  }
+  nueve.onclick = function(e){
+      resultado.textContent = resultado.textContent  + "9";
+  }
+  cero.onclick = function(e){
+      resultado.textContent = resultado.textContent  + "0";
+  }
+  reset.onclick = function(e){
+      resetear();
+  }
+  suma.onclick = function(e){
+      operandoa = resultado.textContent;
+      operacion = "+";
+      limpiar();
+  }
+  resta.onclick = function(e){
+      operandoa = resultado.textContent;
+      operacion = "-";
+      limpiar();
+  }
+  multiplicacion.onclick = function(e){
+      operandoa = resultado.textContent;
+      operacion = "*";
+      limpiar();
+  }
+  division.onclick = function(e){
+      operandoa = resultado.textContent;
+      operacion = "/";
+      limpiar();
+  }
+  igual.onclick = function(e){
+      operandob = resultado.textContent;
+      resolver();
+  }
+  
 }
-/*const todosLosBotones = document.querySelectorAll(".button")
-const numeros = ["1", "2", "3","4","5","6","7","8","9"];
-const operadores =["+", "-", "/" , "*"];
 
+function limpiar(){
+  resultado.textContent = "";
+}
 
-let collectingArray = [];
-window.onload = (e)=> {
-    todosLosBotones.forEach(button => {
-        button.addEventListener("click", (e)=> {
-            const initialArray = [];
-            const value = button.textContent;
-            if (!localStorage.getItem("colectingArray")) {
-               
-    
-    
-                if (numeros.includes(value)) {
-                    // Si es un número, agregarlo al array de recolección
-                    collectingArray.push(value);
-                }else if(operadores.includes(value)){
-                    //si no existe un item en el local storage
-                   if (!localStorage.getItem("storedArray")) {
-                    // lo creamos y le asignamos el valor que el usuario fue seleccionando
-                    localStorage.setItem('storedArray', JSON.stringify(collectingArray));
-                   }
-                   //si existe:
-                   else {
-                    //creamos otro item, sin modificar el ya preexistente y 
-                    //le asignamos el valor que el usuario fue seleccionando
-                    localStorage.setItem('storedArray2', JSON.stringify(collectingArray));
-                   }
-                    collectingArray = [];
-                    let primerOperador = value;
+function resetear(){
+  resultado.textContent = "";
+  operandoa = 0;
+  operandob = 0;
+  operacion = "";
+}
 
-                    //si el usuario aun no ha clickeado su primer operador
-                    if (!localStorage.getItem('primerOperador')) {
-                        localStorage.setItem('primerOperador', JSON.stringify(primerOperador));
-                }
-              }else{   
-                let item1= localStorage.getItem("storedArray");
-                let item2= localStorage.getItem("storedArray2");
-                let operador = localStorage.getItem("primerOperador");
-
-                var numero1 = item1.join(""); // Esto combina los elementos del array en una sola cadena
-                var numero2 = item2.join(""); // Esto combina los elementos del array en una sola cadena
-
-                console.log(item1 , " ", operador, " ", item2);
-
-                console.log(typeof(numero2));
-
-              }
-            }
-                
-            }
-            
-        )
-    });
-}*/
+function resolver(){
+  var res = 0;
+  switch(operacion){
+    case "+":
+      res = parseFloat(operandoa) + parseFloat(operandob);
+      break;
+    case "-":
+        res = parseFloat(operandoa) - parseFloat(operandob);
+        break;
+    case "*":
+      res = (parseFloat(operandoa) * parseFloat(operandob));
+      break;
+    case "/":
+      res = parseFloat(operandoa) / parseFloat(operandob);
+      break;
+  }
+  resetear();
+  resultado.textContent = res;
+}

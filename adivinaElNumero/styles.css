@@ -34,3 +34,35 @@ button:hover {
     color: #333;
     margin-top: 20px;
 }
+.section-vidas{
+    width: 80%;
+    height: 5em;
+    padding: 1em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.div-vida{
+    width: 1em;
+    height: 1em;
+    background-image: url(./corazonRoto.jpg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+
+.message{
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.span{
+    font-weight: bold;
+}
